@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWT Pipe Tools | German-Engineered Pipe Welding Solutions</title>
+    <meta name="description" content="DWT GmbH Germany — Premium pipe beveling machines, centering clamps, pipe jacks, rollers, purging systems & welding accessories. German engineering, global supply.">
+    <meta name="keywords" content="DWT, pipe tools, pipe welding, beveling machine, centering clamp, pipe jack, pipe roller, purging system, German engineering, pipe fabrication">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ========== RESET ========== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        /* ========== DESIGN SYSTEM ========== */
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --steel: #2d2d2d;
+            --gunmetal: #3a3a3a;
+            --slate: #5a5a5a;
+            --mid-gray: #8a8a8a;
+            --silver: #b0b0b0;
+            --light: #e8e8e8;
+            --off-white: #f4f4f4;
+            --white: #ffffff;
+            --accent: #1a6bca;
+            --accent-hover: #d4691f;
+            --accent-glow: rgba(232, 121, 43, 0.15);
+            --accent-dark: #c25e1a;
+            --success: #2ecc71;
+            --radius: 4px;
+            --radius-lg: 8px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.18);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.25);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: var(--transition);
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-inner {
+            max-width: 1280px; margin: 0 auto;
+            padding: 0 40px; height: 76px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .logo-img { height: 48px; width: auto; }
+        .nav-links { display: flex; gap: 6px; align-items: center; }
+        .nav-links a {
+            color: var(--steel); text-decoration: none;
+            font-size: 0.88rem; font-weight: 500;
+            padding: 8px 16px; border-radius: var(--radius);
+            transition: var(--transition); letter-spacing: -0.01em;
+        }
+        .nav-links a:hover { color: var(--accent); background: var(--accent-glow); }
+        .nav-cta {
+            background: var(--charcoal) !important; color: var(--white) !important;
+            font-weight: 600 !important; padding: 10px 22px !important;
+            border-radius: var(--radius) !important;
+        }
+        .nav-cta:hover { background: var(--accent) !important; }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--charcoal); }
+
+        @media (max-width: 900px) {
+            .nav-inner { padding: 0 20px; height: 64px; }
+            .logo-img { height: 38px; }
+            .mobile-toggle { display: block; }
+            .nav-links {
+                display: none; position: fixed; top: 64px; left: 0; right: 0;
+                background: var(--white); flex-direction: column; padding: 20px;
+                border-bottom: 1px solid var(--light); gap: 4px;
+                box-shadow: var(--shadow-lg);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { padding: 14px 16px; font-size: 1rem; width: 100%; border-radius: var(--radius); }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--charcoal);
+            overflow: hidden; padding: 120px 40px 80px;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(232,121,43,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.03) 0%, transparent 50%);
+        }
+        .hero::after {
+            content: ''; position: absolute; inset: 0;
+            background: repeating-linear-gradient(
+                90deg, transparent, transparent 99px, rgba(255,255,255,0.015) 99px, rgba(255,255,255,0.015) 100px
+            );
+        }
+        .hero-grid-overlay {
+            position: absolute; inset: 0; opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .hero-content {
+            position: relative; z-index: 2; text-align: center;
+            max-width: 900px; margin: 0 auto;
+        }
+        .hero-logo-wrap {
+            margin-bottom: 40px;
+        }
+        .hero-logo {
+            height: 100px; width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+        }
+        .hero-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(232,121,43,0.12); border: 1px solid rgba(232,121,43,0.25);
+            color: var(--accent); padding: 8px 18px;
+            border-radius: 100px; font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .hero-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+            font-weight: 800; color: var(--white);
+            line-height: 1.08; letter-spacing: -0.035em;
+            margin-bottom: 24px;
+        }
+        .hero h1 .accent { color: var(--accent); }
+        .hero h1 .thin { font-weight: 300; color: rgba(255,255,255,0.6); }
+        .hero-sub {
+            font-size: 1.15rem; color: rgba(255,255,255,0.55);
+            max-width: 560px; margin: 0 auto 40px;
+            line-height: 1.7; font-weight: 400;
+        }
+        .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; font-size: 0.92rem; font-weight: 600;
+            border-radius: var(--radius); border: none; cursor: pointer;
+            transition: var(--transition); text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        .btn-primary {
+            background: var(--accent); color: var(--white);
+            box-shadow: 0 4px 15px rgba(232,121,43,0.35);
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,121,43,0.4); }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 1.5px solid rgba(255,255,255,0.2);
+        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(232,121,43,0.05); }
+        .btn-dark { background: var(--charcoal); color: var(--white); border: 1.5px solid var(--gunmetal); }
+        .btn-dark:hover { background: var(--steel); }
+
+        .hero-stats {
+            display: flex; gap: 60px; justify-content: center;
+            margin-top: 64px; padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-size: 2rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; }
+        .hero-stat-num .accent { color: var(--accent); font-weight: 800; }
+        .hero-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 100px 20px 60px; min-height: auto; }
+            .hero-logo { height: 70px; }
+            .hero-stats { gap: 30px; flex-wrap: wrap; }
+            .hero-sub { font-size: 1rem; }
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            background: var(--off-white); border-top: 1px solid var(--light);
+            border-bottom: 1px solid var(--light);
+            padding: 40px 20px;
+        }
+        .trust-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;
+            align-items: center;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 12px;
+            color: var(--slate); font-size: 0.88rem; font-weight: 500;
+        }
+        .trust-icon {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: var(--white); border: 1px solid var(--light);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); font-size: 1rem;
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: 100px 40px;
+        }
+        .section-dark { background: var(--charcoal); color: var(--white); }
+        .section-alt { background: var(--off-white); }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 16px;
+        }
+        .section-tag::before, .section-tag::after {
+            content: ''; width: 24px; height: 1px; background: var(--accent); opacity: 0.4;
+        }
+        .section-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            line-height: 1.15; margin-bottom: 16px;
+        }
+        .section-dark .section-header h2 { color: var(--white); }
+        .section-header p {
+            color: var(--mid-gray); font-size: 1.05rem;
+            max-width: 520px; margin: 0 auto;
+        }
+        .section-dark .section-header p { color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 768px) {
+            .section { padding: 60px 20px; }
+        }
+
+        /* ========== CATEGORY FILTERS ========== */
+        .filter-bar {
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        .filter-btn {
+            padding: 10px 22px; border-radius: 100px;
+            border: 1.5px solid var(--light);
+            background: var(--white); color: var(--slate);
+            font-size: 0.84rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition); letter-spacing: -0.01em;
+        }
+        .filter-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .filter-btn.active {
+            background: var(--charcoal); color: var(--white);
+            border-color: var(--charcoal);
+        }
+        .section-dark .filter-btn {
+            border-color: var(--gunmetal); background: var(--steel);
+            color: var(--silver);
+        }
+        .section-dark .filter-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(232,121,43,0.1); }
+        .section-dark .filter-btn.active { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+        /* ========== PRODUCT GRID ========== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: var(--white); border-radius: var(--radius-lg);
+            border: 1px solid var(--light);
+            overflow: hidden; cursor: pointer;
+            transition: var(--transition);
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(232,121,43,0.3);
+        }
+        .section-dark .product-card {
+            background: var(--steel); border-color: var(--gunmetal);
+        }
+        .section-dark .product-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        .img-wrap {
+            aspect-ratio: 4/3; overflow: hidden;
+            background: #f8f8f8; position: relative;
+        }
+        .img-wrap img {
+            width: 100%; height: 100%; object-fit: contain;
+            padding: 16px; transition: transform 0.5s ease;
+        }
+        .product-card:hover .img-wrap img { transform: scale(1.05); }
+        .section-dark .img-wrap { background: rgba(255,255,255,0.05); }
+        .card-body {
+            padding: 20px 20px 12px; flex: 1;
+        }
+        .card-body h3 {
+            font-size: 0.95rem; font-weight: 700;
+            letter-spacing: -0.01em; margin-bottom: 6px;
+            color: var(--charcoal);
+        }
+        .section-dark .card-body h3 { color: var(--white); }
+        .card-body p {
+            font-size: 0.83rem; color: var(--mid-gray);
+            line-height: 1.5;
+        }
+        .card-footer {
+            padding: 12px 20px 16px;
+            display: flex; align-items: center; justify-content: space-between;
+            border-top: 1px solid var(--light);
+        }
+        .section-dark .card-footer { border-color: var(--gunmetal); }
+        .card-badge {
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--accent); background: var(--accent-glow);
+            padding: 4px 10px; border-radius: 100px;
+        }
+        .card-link {
+            font-size: 0.82rem; font-weight: 600;
+            color: var(--accent); text-decoration: none;
+            transition: var(--transition);
+        }
+        .card-link:hover { color: var(--accent-hover); }
+
+        /* ========== COMPARISON TABLE ========== */
+        .comparison-wrap {
+            overflow-x: auto; border-radius: var(--radius-lg);
+            border: 1px solid var(--light);
+        }
+        .comparison-table { width: 100%; border-collapse: collapse; }
+        .comparison-table th {
+            background: var(--charcoal); color: var(--white);
+            padding: 16px 20px; font-size: 0.82rem; font-weight: 700;
+            text-align: left; letter-spacing: 0.02em;
+            white-space: nowrap; text-transform: uppercase;
+        }
+        .comparison-table td {
+            padding: 14px 20px; font-size: 0.88rem;
+            border-bottom: 1px solid var(--light);
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: var(--accent-glow); }
+        .comparison-table td:first-child { font-weight: 600; color: var(--charcoal); }
+        .check { color: var(--accent); font-weight: 700; }
+        .dash { color: var(--silver); }
+
+        /* ========== AI RECOMMENDATION ========== */
+        .ai-box {
+            max-width: 700px; margin: 0 auto;
+            background: var(--white); border-radius: var(--radius-lg);
+            border: 1px solid var(--light);
+            padding: 36px; box-shadow: var(--shadow-sm);
+        }
+        .ai-box h3 {
+            font-size: 1.15rem; font-weight: 700; margin-bottom: 6px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .ai-box h3 i { color: var(--accent); }
+        .ai-box > p { color: var(--mid-gray); font-size: 0.92rem; margin-bottom: 20px; }
+        .ai-options { display: flex; flex-direction: column; gap: 8px; }
+        .ai-option-btn {
+            display: flex; align-items: center; gap: 12px;
+            width: 100%; padding: 14px 18px;
+            background: var(--off-white); border: 1px solid var(--light);
+            border-radius: var(--radius); cursor: pointer;
+            font-size: 0.9rem; font-weight: 500; color: var(--charcoal);
+            transition: var(--transition); text-align: left;
+        }
+        .ai-option-btn i { color: var(--accent); width: 18px; text-align: center; }
+        .ai-option-btn:hover {
+            border-color: var(--accent); background: var(--accent-glow);
+            transform: translateX(4px);
+        }
+        .ai-chat { display: none; }
+        .ai-chat.active { display: block; margin-top: 16px; }
+        .ai-messages {
+            max-height: 350px; overflow-y: auto; padding: 12px 0;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .ai-msg {
+            padding: 12px 16px; border-radius: var(--radius-lg);
+            font-size: 0.88rem; line-height: 1.5; max-width: 85%;
+        }
+        .ai-msg.bot {
+            background: var(--off-white); color: var(--charcoal);
+            align-self: flex-start; border: 1px solid var(--light);
+        }
+        .ai-msg.user {
+            background: var(--charcoal); color: var(--white);
+            align-self: flex-end;
+        }
+        .product-suggestion {
+            display: inline-block; margin-top: 6px;
+            color: var(--accent); cursor: pointer; font-weight: 600;
+            font-size: 0.82rem;
+        }
+        .product-suggestion:hover { text-decoration: underline; }
+        .ai-input-row {
+            display: flex; gap: 8px; margin-top: 12px;
+        }
+        .ai-input-row input {
+            flex: 1; padding: 12px 16px; border: 1.5px solid var(--light);
+            border-radius: var(--radius); font-size: 0.9rem;
+            transition: var(--transition); font-family: inherit;
+        }
+        .ai-input-row input:focus { outline: none; border-color: var(--accent); }
+        .ai-input-row button {
+            background: var(--accent); color: var(--white); border: none;
+            padding: 12px 18px; border-radius: var(--radius); cursor: pointer;
+            transition: var(--transition);
+        }
+        .ai-input-row button:hover { background: var(--accent-hover); }
+
+        /* ========== QUOTE FORM ========== */
+        .quote-card {
+            max-width: 800px; margin: 0 auto;
+            background: var(--white); border-radius: var(--radius-lg);
+            padding: 44px; border: 1px solid var(--light);
+            box-shadow: var(--shadow-sm);
+        }
+        .section-dark .quote-card { background: var(--steel); border-color: var(--gunmetal); }
+        .form-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+            margin-bottom: 28px;
+        }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label {
+            display: block; font-size: 0.82rem; font-weight: 600;
+            color: var(--charcoal); margin-bottom: 6px;
+            letter-spacing: 0.01em;
+        }
+        .section-dark .form-group label { color: var(--silver); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px 14px; border: 1.5px solid var(--light);
+            border-radius: var(--radius); font-size: 0.9rem;
+            font-family: inherit; transition: var(--transition);
+            background: var(--white);
+        }
+        .section-dark .form-group input, .section-dark .form-group select, .section-dark .form-group textarea {
+            background: var(--gunmetal); border-color: var(--slate);
+            color: var(--white);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-actions {
+            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+        }
+        .btn-email-send { background: var(--charcoal); color: var(--white); }
+        .btn-email-send:hover { background: var(--steel); }
+        .btn-whatsapp { background: #25d366; color: var(--white); }
+        .btn-whatsapp:hover { background: #20bd5a; }
+
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .quote-card { padding: 24px; }
+        }
+
+        /* ========== FAQ ========== */
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid var(--light);
+        }
+        .faq-q {
+            padding: 20px 0; cursor: pointer;
+            display: flex; align-items: center; justify-content: space-between;
+            font-weight: 600; font-size: 0.95rem; color: var(--charcoal);
+            transition: var(--transition);
+        }
+        .faq-q:hover { color: var(--accent); }
+        .faq-q i { transition: transform 0.3s; color: var(--mid-gray); font-size: 0.85rem; }
+        .faq-q.active i { transform: rotate(180deg); color: var(--accent); }
+        .faq-a {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-a.active { max-height: 300px; }
+        .faq-a p {
+            padding: 0 0 20px; color: var(--mid-gray);
+            font-size: 0.9rem; line-height: 1.7;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--black); color: var(--white);
+            padding: 80px 40px 30px;
+        }
+        .footer-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+            gap: 48px; margin-bottom: 48px;
+        }
+        .footer-brand p {
+            color: rgba(255,255,255,0.45); font-size: 0.88rem;
+            line-height: 1.7; margin-top: 16px;
+        }
+        .footer h4 {
+            font-size: 0.78rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 20px;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.55); text-decoration: none;
+            font-size: 0.88rem; transition: var(--transition);
+        }
+        .footer a:hover { color: var(--accent); }
+        .footer-links { display: flex; flex-direction: column; gap: 10px; }
+        .contact-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 0.88rem; color: rgba(255,255,255,0.55);
+            margin-bottom: 12px;
+        }
+        .contact-item i { color: var(--accent); margin-top: 3px; width: 16px; }
+        .footer-bottom {
+            max-width: 1200px; margin: 0 auto;
+            padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center; color: rgba(255,255,255,0.3);
+            font-size: 0.82rem;
+        }
+        @media (max-width: 900px) {
+            .footer { padding: 60px 20px 30px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ========== FLOATING ACTIONS ========== */
+        .floating-actions {
+            position: fixed; bottom: 28px; right: 28px;
+            z-index: 900; display: flex; flex-direction: column;
+            gap: 10px;
+        }
+        .fab {
+            width: 52px; height: 52px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 1.2rem;
+            text-decoration: none; transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+        .fab:hover { transform: scale(1.1); }
+        .fab-whatsapp { background: #25d366; }
+        .fab-call { background: var(--charcoal); }
+        .fab-ai { background: var(--accent); }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.7); z-index: 2000;
+            backdrop-filter: blur(8px);
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content {
+            background: var(--white); border-radius: var(--radius-lg);
+            max-width: 520px; width: 100%; padding: 32px;
+            position: relative; max-height: 90vh; overflow-y: auto;
+        }
+        .modal-close {
+            position: absolute; top: 16px; right: 16px;
+            background: var(--off-white); border: none;
+            width: 36px; height: 36px; border-radius: 50%;
+            font-size: 1.2rem; cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: var(--light); }
+        .modal-content img {
+            width: 100%; aspect-ratio: 4/3; object-fit: contain;
+            background: var(--off-white); border-radius: var(--radius);
+            padding: 16px; margin-bottom: 20px;
+        }
+        .modal-content h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .modal-content p { color: var(--mid-gray); font-size: 0.92rem; margin-bottom: 8px; line-height: 1.6; }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-brand">
+            <img src="assets/dwt-logo.png" alt="DWT Pipe Tools" class="logo-img">
+        </a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="#products" onclick="closeNav()">Products</a>
+            <a href="#comparison" onclick="closeNav()">Compare</a>
+            <a href="#ai-section" onclick="closeNav()">AI Guide</a>
+            <a href="#faq" onclick="closeNav()">FAQ</a>
+            <a href="assets/dwt-catalog.pdf" download onclick="closeNav()">Catalog</a>
+            <a href="#quote" class="nav-cta" onclick="closeNav()">Get a Quote</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-logo-wrap">
+            <img src="assets/dwt-logo.png" alt="DWT Pipe Tools" class="hero-logo">
+        </div>
+        <div class="hero-label"><span class="dot"></span> German-Engineered Precision</div>
+        <h1>Pipe Welding Tools<br><span class="thin">Built for</span> <span class="accent">Industry</span></h1>
+        <p class="hero-sub">Premium beveling machines, clamps, jacks, rollers & purging systems from DWT GmbH, Germany. Trusted by professionals worldwide.</p>
+        <div class="hero-actions">
+            <a href="#quote" class="btn btn-primary"><i class="fas fa-file-invoice"></i> Request a Quote</a>
+            <a href="assets/dwt-catalog.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Download Catalog</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-num">40<span class="accent">+</span></div>
+                <div class="hero-stat-label">Products</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">10</div>
+                <div class="hero-stat-label">Categories</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">DWT</div>
+                <div class="hero-stat-label">GmbH Germany</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">∞</div>
+                <div class="hero-stat-label">Global Supply</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-inner">
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-award"></i></div>
+            <span>German Engineering</span>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-globe"></i></div>
+            <span>Global Delivery</span>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+            <span>Industry Certified</span>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-headset"></i></div>
+            <span>Expert Support</span>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-cogs"></i></div>
+            <span>40+ Products</span>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products" class="section section-dark">
+    <div class="container">
+        <div class="section-header fade-in">
+            <div class="section-tag">Product Range</div>
+            <h2>Engineered for<br>Precision & Performance</h2>
+            <p>Complete range of pipe welding tools for every industrial application</p>
+        </div>
+        <div class="filter-bar fade-in">
+            <button class="filter-btn active" data-cat="all">All Products</button>
+            <button class="filter-btn" data-cat="beveling">Beveling & Cutting</button>
+            <button class="filter-btn" data-cat="clamps">Clamps</button>
+            <button class="filter-btn" data-cat="jacks">Pipe Jacks</button>
+            <button class="filter-btn" data-cat="rollers">Pipe Rollers</button>
+            <button class="filter-btn" data-cat="fitup">Pipe Fit-Up</button>
+            <button class="filter-btn" data-cat="leveling">Leveling</button>
+            <button class="filter-btn" data-cat="purging">Purging</button>
+            <button class="filter-btn" data-cat="marking">Marking</button>
+            <button class="filter-btn" data-cat="flange">Flange Tools</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+            <!-- Beveling & Cutting -->
+            <div class="product-card fade-in" data-cat="beveling" data-name="Pipe Beveling Machine" data-desc="Portable pipe beveling machine for precise weld preparation. Creates consistent, accurate bevels on pipe ends for perfect weld joints." data-img="assets/products/pipe-beveling-machine.jpg" data-sizes="Multiple pipe diameters" data-specs="Portable, Precise bevels, Quick setup">
+                <div class="img-wrap"><img src="assets/products/pipe-beveling-machine.jpg" alt="Pipe Beveling Machine" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Beveling Machine</h3><p>Portable machine for precise weld preparation bevels</p></div>
+                <div class="card-footer"><span class="card-badge">Beveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Beveling & Cutting','Pipe Beveling Machine')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="beveling" data-name="Pipe Milling Machine" data-desc="Heavy-duty pipe milling machine for precision end preparation. Handles thicker walls and larger diameters with ease." data-img="assets/products/pipe-milling-machine.jpg" data-sizes="Large diameter range" data-specs="Heavy-duty, Thick wall capable, Industrial-grade">
+                <div class="img-wrap"><img src="assets/products/pipe-milling-machine.jpg" alt="Pipe Milling Machine" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Milling Machine</h3><p>Heavy-duty milling for thick walls and large diameters</p></div>
+                <div class="card-footer"><span class="card-badge">Beveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Beveling & Cutting','Pipe Milling Machine')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="beveling" data-name="CPC Cutting & Beveling Machine" data-desc="Combined cutting and beveling machine — performs both operations in one pass. Saves time and ensures perfect alignment between cut and bevel." data-img="assets/products/cpc-cutting-beveling.jpg" data-sizes="Multiple pipe diameters" data-specs="Combined cut+bevel, One-pass operation, Time-saving">
+                <div class="img-wrap"><img src="assets/products/cpc-cutting-beveling.jpg" alt="CPC Cutting & Beveling Machine" loading="lazy"></div>
+                <div class="card-body"><h3>CPC Cutting & Beveling Machine</h3><p>Combined cut and bevel in a single pass</p></div>
+                <div class="card-footer"><span class="card-badge">Beveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Beveling & Cutting','CPC Cutting & Beveling Machine')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="beveling" data-name="DLW Cutting & Beveling Machine" data-desc="Versatile DLW cutting and beveling machine for larger pipe diameters. Robust construction for demanding industrial applications." data-img="assets/products/dlw-cutting-beveling-machine.jpg" data-sizes="Large pipe diameters" data-specs="Heavy-duty, Large diameter capability, Industrial-grade">
+                <div class="img-wrap"><img src="assets/products/dlw-cutting-beveling-machine.jpg" alt="DLW Cutting & Beveling Machine" loading="lazy"></div>
+                <div class="card-body"><h3>DLW Cutting & Beveling Machine</h3><p>Robust machine for cutting & beveling larger pipes</p></div>
+                <div class="card-footer"><span class="card-badge">Beveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Beveling & Cutting','DLW Cutting & Beveling Machine')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="beveling" data-name="Exact Pipe Saw" data-desc="Precision pipe cutting saw for clean, burr-free cuts. Ideal for stainless steel, carbon steel, and other alloy pipes." data-img="assets/products/exact-pipe-saw.jpg" data-sizes="Various pipe sizes" data-specs="Clean cuts, Burr-free, Multi-material compatible">
+                <div class="img-wrap"><img src="assets/products/exact-pipe-saw.jpg" alt="Exact Pipe Saw" loading="lazy"></div>
+                <div class="card-body"><h3>Exact Pipe Saw</h3><p>Precision cutting for clean, burr-free pipe cuts</p></div>
+                <div class="card-footer"><span class="card-badge">Cutting</span><a href="#quote" class="card-link" onclick="prefillQuote('Beveling & Cutting','Exact Pipe Saw')">Get Quote →</a></div>
+            </div>
+
+            <!-- Clamps -->
+            <div class="product-card fade-in" data-cat="clamps" data-name="Centering Clamp INT" data-desc="Internal centering clamp for precise pipe alignment during welding. Ensures perfect concentricity for high-quality welds." data-img="assets/products/centering-clamp-int.jpg" data-sizes="Multiple pipe diameters" data-specs="Internal type, Precise alignment, Quick setup">
+                <div class="img-wrap"><img src="assets/products/centering-clamp-int.jpg" alt="Centering Clamp INT" loading="lazy"></div>
+                <div class="card-body"><h3>Centering Clamp INT</h3><p>Internal centering for precise pipe alignment</p></div>
+                <div class="card-footer"><span class="card-badge">Clamps</span><a href="#quote" class="card-link" onclick="prefillQuote('Clamps','Centering Clamp INT')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="clamps" data-name="Centering Clamp EXT" data-desc="External centering clamp providing strong, even clamping force around the pipe exterior. Perfect for field welding applications." data-img="assets/products/centering-clamp-ext.jpg" data-sizes="Multiple pipe diameters" data-specs="External type, Strong clamping force, Field-ready">
+                <div class="img-wrap"><img src="assets/products/centering-clamp-ext.jpg" alt="Centering Clamp EXT" loading="lazy"></div>
+                <div class="card-body"><h3>Centering Clamp EXT</h3><p>External centering with strong, even clamping force</p></div>
+                <div class="card-footer"><span class="card-badge">Clamps</span><a href="#quote" class="card-link" onclick="prefillQuote('Clamps','Centering Clamp EXT')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="clamps" data-name="Centering Clamp Elbow" data-desc="Specialized clamp for aligning elbows and fittings to pipe. Adjustable design accommodates various elbow angles." data-img="assets/products/centering-clamp-elbow.jpg" data-sizes="Various elbow sizes" data-specs="Elbow-specific, Adjustable angles, Versatile">
+                <div class="img-wrap"><img src="assets/products/centering-clamp-elbow.jpg" alt="Centering Clamp Elbow" loading="lazy"></div>
+                <div class="card-body"><h3>Centering Clamp Elbow</h3><p>Specialized clamp for elbows and fittings alignment</p></div>
+                <div class="card-footer"><span class="card-badge">Clamps</span><a href="#quote" class="card-link" onclick="prefillQuote('Clamps','Centering Clamp Elbow')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="clamps" data-name="Chain Clamp" data-desc="Flexible chain clamp for quick pipe alignment. Wraps around any pipe size within range for rapid setup and alignment." data-img="assets/products/chain-clamp.jpg" data-sizes="Wide diameter range" data-specs="Flexible chain design, Quick wrap-around, Versatile sizing">
+                <div class="img-wrap"><img src="assets/products/chain-clamp.jpg" alt="Chain Clamp" loading="lazy"></div>
+                <div class="card-body"><h3>Chain Clamp</h3><p>Flexible chain clamp for quick pipe alignment</p></div>
+                <div class="card-footer"><span class="card-badge">Clamps</span><a href="#quote" class="card-link" onclick="prefillQuote('Clamps','Chain Clamp')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="clamps" data-name="Cage Clamp" data-desc="Heavy-duty cage clamp for secure pipe holding during welding. Provides 360° access to the weld joint while maintaining alignment." data-img="assets/products/cage-clamp.jpg" data-sizes="Multiple pipe diameters" data-specs="360° weld access, Heavy-duty, Secure holding">
+                <div class="img-wrap"><img src="assets/products/cage-clamp.jpg" alt="Cage Clamp" loading="lazy"></div>
+                <div class="card-body"><h3>Cage Clamp</h3><p>Heavy-duty cage clamp with 360° weld access</p></div>
+                <div class="card-footer"><span class="card-badge">Clamps</span><a href="#quote" class="card-link" onclick="prefillQuote('Clamps','Cage Clamp')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="clamps" data-name="Reformer Clamp" data-desc="Pipe reformer clamp to restore out-of-round pipes to their original shape. Essential for damaged or deformed pipe repair." data-img="assets/products/reformer-clamp.jpg" data-sizes="Various pipe diameters" data-specs="Reshaping capability, Restores roundness, Heavy-duty">
+                <div class="img-wrap"><img src="assets/products/reformer-clamp.jpg" alt="Reformer Clamp" loading="lazy"></div>
+                <div class="card-body"><h3>Reformer Clamp</h3><p>Restores out-of-round pipes to original shape</p></div>
+                <div class="card-footer"><span class="card-badge">Clamps</span><a href="#quote" class="card-link" onclick="prefillQuote('Clamps','Reformer Clamp')">Get Quote →</a></div>
+            </div>
+
+            <!-- Pipe Jacks -->
+            <div class="product-card fade-in" data-cat="jacks" data-name="Pipe Jack – Folding" data-desc="Foldable pipe jack for easy transport and storage. Adjustable height with sturdy base for safe pipe support during fabrication." data-img="assets/products/pipe-jack-folding.jpg" data-sizes="Adjustable height" data-specs="Foldable design, Easy transport, Stable base">
+                <div class="img-wrap"><img src="assets/products/pipe-jack-folding.jpg" alt="Pipe Jack Folding" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Jack – Folding</h3><p>Foldable jack with adjustable height for easy transport</p></div>
+                <div class="card-footer"><span class="card-badge">Jacks</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Jacks','Pipe Jack – Folding')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="jacks" data-name="Pipe Jack – V-Head" data-desc="V-head pipe jack provides stable V-shaped cradle for secure pipe positioning. Prevents rolling during welding and cutting operations." data-img="assets/products/pipe-jack-v-head.jpg" data-sizes="Adjustable height" data-specs="V-head cradle, Anti-roll design, Adjustable">
+                <div class="img-wrap"><img src="assets/products/pipe-jack-v-head.jpg" alt="Pipe Jack V-Head" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Jack – V-Head</h3><p>V-shaped cradle for stable, anti-roll pipe support</p></div>
+                <div class="card-footer"><span class="card-badge">Jacks</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Jacks','Pipe Jack – V-Head')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="jacks" data-name="Pipe Jack – Roller Head" data-desc="Roller-head pipe jack allows pipes to rotate freely during welding. Essential for achieving consistent welds around the full circumference." data-img="assets/products/pipe-jack-roller-head.jpg" data-sizes="Adjustable height" data-specs="Roller head, Free rotation, Consistent welding">
+                <div class="img-wrap"><img src="assets/products/pipe-jack-roller-head.jpg" alt="Pipe Jack Roller Head" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Jack – Roller Head</h3><p>Roller head allows free pipe rotation during welding</p></div>
+                <div class="card-footer"><span class="card-badge">Jacks</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Jacks','Pipe Jack – Roller Head')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="jacks" data-name="Pipe Jack – Shorty" data-desc="Compact, low-profile pipe jack for tight spaces and low clearance work. Full functionality in a smaller package." data-img="assets/products/pipe-jack-shorty.jpg" data-sizes="Low profile" data-specs="Compact design, Low clearance, Space-saving">
+                <div class="img-wrap"><img src="assets/products/pipe-jack-shorty.jpg" alt="Pipe Jack Shorty" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Jack – Shorty</h3><p>Compact, low-profile jack for tight spaces</p></div>
+                <div class="card-footer"><span class="card-badge">Jacks</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Jacks','Pipe Jack – Shorty')">Get Quote →</a></div>
+            </div>
+
+            <!-- Pipe Rollers -->
+            <div class="product-card fade-in" data-cat="rollers" data-name="Pipe Roller – Conventional" data-desc="Conventional pipe roller set for rotating pipes during welding. Adjustable rollers accommodate various pipe diameters." data-img="assets/products/pipe-roller-conventional.jpg" data-sizes="Adjustable rollers" data-specs="Conventional design, Smooth rotation, Adjustable">
+                <div class="img-wrap"><img src="assets/products/pipe-roller-conventional.jpg" alt="Pipe Roller Conventional" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Roller – Conventional</h3><p>Adjustable roller set for smooth pipe rotation</p></div>
+                <div class="card-footer"><span class="card-badge">Rollers</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Rollers','Pipe Roller – Conventional')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="rollers" data-name="Pipe Roller – Self-Aligning" data-desc="Self-aligning pipe roller automatically adjusts to pipe size and prevents axial drift. Ideal for long pipe runs and automated welding." data-img="assets/products/pipe-roller-self-aligning.jpg" data-sizes="Self-adjusting" data-specs="Self-aligning, Anti-drift, Automated compatibility">
+                <div class="img-wrap"><img src="assets/products/pipe-roller-self-aligning.jpg" alt="Pipe Roller Self-Aligning" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Roller – Self-Aligning</h3><p>Auto-adjusting roller prevents drift on long pipe runs</p></div>
+                <div class="card-footer"><span class="card-badge">Rollers</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Rollers','Pipe Roller – Self-Aligning')">Get Quote →</a></div>
+            </div>
+
+            <!-- Pipe Fit-Up -->
+            <div class="product-card fade-in" data-cat="fitup" data-name="Ratchet Leveler" data-desc="Ratchet-operated pipe leveler for fine height adjustment during fit-up. Enables precise positioning for perfect joint alignment." data-img="assets/products/ratchet-leveler.jpg" data-sizes="Universal" data-specs="Ratchet mechanism, Fine adjustment, Precise leveling">
+                <div class="img-wrap"><img src="assets/products/ratchet-leveler.jpg" alt="Ratchet Leveler" loading="lazy"></div>
+                <div class="card-body"><h3>Ratchet Leveler</h3><p>Ratchet-operated fine height adjustment for pipe fit-up</p></div>
+                <div class="card-footer"><span class="card-badge">Fit-Up</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Fit-Up','Ratchet Leveler')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="fitup" data-name="Pipe Lifter" data-desc="Hydraulic pipe lifter for safe handling and positioning of heavy pipes. Reduces manual lifting and prevents workplace injuries." data-img="assets/products/pipe-lifter.jpg" data-sizes="Various capacities" data-specs="Safe handling, Heavy pipe support, Ergonomic">
+                <div class="img-wrap"><img src="assets/products/pipe-lifter.jpg" alt="Pipe Lifter" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Lifter</h3><p>Safe lifting and positioning of heavy pipes</p></div>
+                <div class="card-footer"><span class="card-badge">Fit-Up</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Fit-Up','Pipe Lifter')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="fitup" data-name="Column Clamp" data-desc="Column-mounted pipe clamp for vertical and angled pipe support. Provides stable, adjustable holding for complex pipe configurations." data-img="assets/products/column-clamp.jpg" data-sizes="Multiple sizes" data-specs="Column-mounted, Adjustable angles, Stable hold">
+                <div class="img-wrap"><img src="assets/products/column-clamp.jpg" alt="Column Clamp" loading="lazy"></div>
+                <div class="card-body"><h3>Column Clamp</h3><p>Column-mounted clamp for vertical and angled support</p></div>
+                <div class="card-footer"><span class="card-badge">Fit-Up</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Fit-Up','Column Clamp')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="fitup" data-name="Pipe Cradle" data-desc="Robust pipe cradle for safe storage and transport of pipes on job sites. Stackable design saves space." data-img="assets/products/pipe-cradle.jpg" data-sizes="Various capacities" data-specs="Stackable, Safe storage, Transport-ready">
+                <div class="img-wrap"><img src="assets/products/pipe-cradle.jpg" alt="Pipe Cradle" loading="lazy"></div>
+                <div class="card-body"><h3>Pipe Cradle</h3><p>Robust cradle for safe pipe storage and transport</p></div>
+                <div class="card-footer"><span class="card-badge">Fit-Up</span><a href="#quote" class="card-link" onclick="prefillQuote('Pipe Fit-Up','Pipe Cradle')">Get Quote →</a></div>
+            </div>
+
+            <!-- Leveling -->
+            <div class="product-card fade-in" data-cat="leveling" data-name="Spirit Level" data-desc="Precision spirit level designed for pipe work. Magnetic base and V-groove adapters ensure accurate readings on curved surfaces." data-img="assets/products/spirit-level.jpg" data-sizes="Multiple lengths" data-specs="Magnetic base, V-groove adapters, High accuracy">
+                <div class="img-wrap"><img src="assets/products/spirit-level.jpg" alt="Spirit Level" loading="lazy"></div>
+                <div class="card-body"><h3>Spirit Level</h3><p>Precision level with magnetic base for pipe work</p></div>
+                <div class="card-footer"><span class="card-badge">Leveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Leveling','Spirit Level')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="leveling" data-name="Digital Protractor" data-desc="Digital angle measurement tool for precise bevel and miter angle verification. LCD display with hold function for easy reading." data-img="assets/products/digital-protractor.jpg" data-sizes="Standard" data-specs="Digital LCD display, Hold function, High precision">
+                <div class="img-wrap"><img src="assets/products/digital-protractor.jpg" alt="Digital Protractor" loading="lazy"></div>
+                <div class="card-body"><h3>Digital Protractor</h3><p>Precise digital angle measurement with LCD display</p></div>
+                <div class="card-footer"><span class="card-badge">Leveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Leveling','Digital Protractor')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="leveling" data-name="Angle Finder" data-desc="Versatile angle finder for measuring and transferring angles during pipe fabrication. Essential for accurate pipe routing and layout." data-img="assets/products/angle-finder.jpg" data-sizes="Standard" data-specs="Angle measurement, Angle transfer, Layout tool">
+                <div class="img-wrap"><img src="assets/products/angle-finder.jpg" alt="Angle Finder" loading="lazy"></div>
+                <div class="card-body"><h3>Angle Finder</h3><p>Versatile angle measurement and transfer tool</p></div>
+                <div class="card-footer"><span class="card-badge">Leveling</span><a href="#quote" class="card-link" onclick="prefillQuote('Leveling','Angle Finder')">Get Quote →</a></div>
+            </div>
+
+            <!-- Purging Systems -->
+            <div class="product-card fade-in" data-cat="purging" data-name="EcoInert Purging System" data-desc="Complete inert gas purging system for weld root protection. Ensures oxidation-free TIG/GTAW welds on stainless steel and alloy pipes." data-img="assets/products/eco-inert-purging.jpg" data-sizes="Multiple pipe ranges" data-specs="Inert gas purging, Oxidation-free roots, Complete kit">
+                <div class="img-wrap"><img src="assets/products/eco-inert-purging.jpg" alt="EcoInert Purging System" loading="lazy"></div>
+                <div class="card-body"><h3>EcoInert Purging System</h3><p>Complete inert gas purging for oxidation-free weld roots</p></div>
+                <div class="card-footer"><span class="card-badge">Purging</span><a href="#quote" class="card-link" onclick="prefillQuote('Purging Systems','EcoInert Purging System')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="purging" data-name="Purging Monitor" data-desc="Digital purging monitor to measure residual oxygen levels inside the pipe during purging. Ensures optimal welding conditions." data-img="assets/products/purging-monitor.jpg" data-sizes="Standard" data-specs="Digital O2 monitoring, Real-time readings, Precision sensor">
+                <div class="img-wrap"><img src="assets/products/purging-monitor.jpg" alt="Purging Monitor" loading="lazy"></div>
+                <div class="card-body"><h3>Purging Monitor</h3><p>Digital oxygen monitor for optimal purging verification</p></div>
+                <div class="card-footer"><span class="card-badge">Purging</span><a href="#quote" class="card-link" onclick="prefillQuote('Purging Systems','Purging Monitor')">Get Quote →</a></div>
+            </div>
+
+            <!-- Marking Aids -->
+            <div class="product-card fade-in" data-cat="marking" data-name="Centering Head" data-desc="Precision centering head for finding pipe center point. Essential for layout work and accurate pipe marking before cutting." data-img="assets/products/centering-head.jpg" data-sizes="Standard" data-specs="Center-finding, Layout tool, Precision marking">
+                <div class="img-wrap"><img src="assets/products/centering-head.jpg" alt="Centering Head" loading="lazy"></div>
+                <div class="card-body"><h3>Centering Head</h3><p>Precision tool for finding pipe center point</p></div>
+                <div class="card-footer"><span class="card-badge">Marking</span><a href="#quote" class="card-link" onclick="prefillQuote('Marking Aids','Centering Head')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="marking" data-name="Marking Tape" data-desc="Wrap-around marking tape for accurate pipe circumference marking. Creates straight, even cut lines for precision cutting and beveling." data-img="assets/products/marking-tape.jpg" data-sizes="Multiple widths" data-specs="Wrap-around design, Straight lines, Reusable">
+                <div class="img-wrap"><img src="assets/products/marking-tape.jpg" alt="Marking Tape" loading="lazy"></div>
+                <div class="card-body"><h3>Marking Tape</h3><p>Wrap-around tape for accurate circumference marking</p></div>
+                <div class="card-footer"><span class="card-badge">Marking</span><a href="#quote" class="card-link" onclick="prefillQuote('Marking Aids','Marking Tape')">Get Quote →</a></div>
+            </div>
+
+            <!-- Flange Tools -->
+            <div class="product-card fade-in" data-cat="flange" data-name="Flange Leveler" data-desc="Precision flange leveling tool ensures flanges are perfectly aligned before bolting. Prevents leaks and uneven gasket compression." data-img="assets/products/flange-leveler.jpg" data-sizes="Standard" data-specs="Precision alignment, Leak prevention, Easy to use">
+                <div class="img-wrap"><img src="assets/products/flange-leveler.jpg" alt="Flange Leveler" loading="lazy"></div>
+                <div class="card-body"><h3>Flange Leveler</h3><p>Ensures perfect flange alignment before bolting</p></div>
+                <div class="card-footer"><span class="card-badge">Flange</span><a href="#quote" class="card-link" onclick="prefillQuote('Flange Tools','Flange Leveler')">Get Quote →</a></div>
+            </div>
+            <div class="product-card fade-in" data-cat="flange" data-name="Flange Spreader" data-desc="Hydraulic flange spreader for safe separation of flanged joints during maintenance. Controlled force prevents damage to flange faces." data-img="assets/products/flange-spreader.jpg" data-sizes="Multiple sizes" data-specs="Hydraulic operation, Safe separation, Controlled force">
+                <div class="img-wrap"><img src="assets/products/flange-spreader.jpg" alt="Flange Spreader" loading="lazy"></div>
+                <div class="card-body"><h3>Flange Spreader</h3><p>Hydraulic spreader for safe flange joint separation</p></div>
+                <div class="card-footer"><span class="card-badge">Flange</span><a href="#quote" class="card-link" onclick="prefillQuote('Flange Tools','Flange Spreader')">Get Quote →</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section id="comparison" class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <div class="section-tag">Compare</div>
+            <h2>Product Comparison</h2>
+            <p>Quick comparison of key features across product categories</p>
+        </div>
+        <div class="comparison-wrap fade-in">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Beveling Machines</th>
+                        <th>Centering Clamps</th>
+                        <th>Pipe Jacks</th>
+                        <th>Pipe Rollers</th>
+                        <th>Purging Systems</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Portable</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                    <tr><td>Multiple Pipe Sizes</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                    <tr><td>Field Use Ready</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                    <tr><td>No Power Required</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="dash">—</td></tr>
+                    <tr><td>Weld Prep</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+                    <tr><td>Pipe Rotation</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td></tr>
+                    <tr><td>Alignment</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td></tr>
+                    <tr><td>German Engineered</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- AI SMART RECOMMENDATION -->
+<section id="ai-section" class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-in">
+            <div class="section-tag">✨ Smart Tool</div>
+            <h2>AI Product Recommendation</h2>
+            <p>Not sure which tool you need? Tell us your task and we'll suggest the right product</p>
+        </div>
+        <div class="ai-box fade-in" id="aiBox">
+            <h3><i class="fas fa-robot"></i> Smart Recommendation Engine</h3>
+            <p>Choose a common task or describe what you need:</p>
+            <div class="ai-options" id="aiOptions">
+                <button class="ai-option-btn" onclick="aiAnswer('bevel')"><i class="fas fa-cog"></i> I need to prepare pipe ends for welding</button>
+                <button class="ai-option-btn" onclick="aiAnswer('align')"><i class="fas fa-arrows-alt-h"></i> I need to align two pipes together</button>
+                <button class="ai-option-btn" onclick="aiAnswer('support')"><i class="fas fa-arrows-alt-v"></i> I need to support/elevate pipes</button>
+                <button class="ai-option-btn" onclick="aiAnswer('rotate')"><i class="fas fa-sync-alt"></i> I need to rotate pipes during welding</button>
+                <button class="ai-option-btn" onclick="aiAnswer('purge')"><i class="fas fa-shield-alt"></i> I need to protect weld roots from oxidation</button>
+                <button class="ai-option-btn" onclick="aiAnswer('flange')"><i class="fas fa-compress-alt"></i> I need to work with flanges</button>
+                <button class="ai-option-btn" onclick="aiAnswer('measure')"><i class="fas fa-ruler-combined"></i> I need to measure angles or levels</button>
+                <button class="ai-option-btn" onclick="aiAnswer('cut')"><i class="fas fa-cut"></i> I need to cut pipes</button>
+            </div>
+            <div class="ai-chat" id="aiChat">
+                <div class="ai-messages" id="aiMessages"></div>
+                <div class="ai-input-row">
+                    <input type="text" id="aiInput" placeholder="Describe your task or ask a question..." onkeypress="if(event.key==='Enter')aiSend()">
+                    <button onclick="aiSend()"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote" class="section section-dark">
+    <div class="container">
+        <div class="section-header fade-in">
+            <div class="section-tag">Get a Quote</div>
+            <h2>Request a Quotation</h2>
+            <p>Fill in the details below and we'll get back to you promptly</p>
+        </div>
+        <div class="quote-card fade-in">
+            <form id="quoteForm" onsubmit="return false;">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="qName" required placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" id="qCompany" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="qEmail" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="qPhone" placeholder="+91-XXXXX-XXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Category *</label>
+                        <select id="qCategory" required onchange="updateSubcategory()">
+                            <option value="">Select Category</option>
+                            <option value="Beveling & Cutting">Beveling & Cutting</option>
+                            <option value="Clamps">Clamps</option>
+                            <option value="Pipe Jacks">Pipe Jacks</option>
+                            <option value="Pipe Rollers">Pipe Rollers</option>
+                            <option value="Pipe Fit-Up">Pipe Fit-Up</option>
+                            <option value="Leveling">Leveling</option>
+                            <option value="Purging Systems">Purging Systems</option>
+                            <option value="Marking Aids">Marking Aids</option>
+                            <option value="Flange Tools">Flange Tools</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Product *</label>
+                        <select id="qProduct" required>
+                            <option value="">Select Product</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Pipe Size / Specification</label>
+                        <select id="qSize">
+                            <option value="">Select Size (if applicable)</option>
+                            <option value="1&quot; - 2&quot;">1" - 2"</option>
+                            <option value="2&quot; - 4&quot;">2" - 4"</option>
+                            <option value="4&quot; - 8&quot;">4" - 8"</option>
+                            <option value="8&quot; - 12&quot;">8" - 12"</option>
+                            <option value="12&quot; - 24&quot;">12" - 24"</option>
+                            <option value="24&quot; - 36&quot;">24" - 36"</option>
+                            <option value="36&quot;+">36"+</option>
+                            <option value="Custom / Other">Custom / Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" id="qQty" min="1" placeholder="1" value="1">
+                    </div>
+                    <div class="form-group full">
+                        <label>Additional Details</label>
+                        <textarea id="qDetails" placeholder="Pipe material, project requirements, delivery location, etc."></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-email-send" onclick="sendQuoteEmail()"><i class="fas fa-envelope"></i> Send via Email</button>
+                    <button type="button" class="btn btn-whatsapp" onclick="sendQuoteWhatsApp()"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <div class="section-tag">FAQ</div>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list fade-in">
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is DWT Pipe Tools? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>DWT Pipe Tools (DWT GmbH, Germany) is a leading manufacturer of premium pipe welding accessories. Their range includes beveling machines, centering clamps, pipe jacks, rollers, purging systems, and more — all German-engineered for precision and durability.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Are DWT tools suitable for field use? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes! All DWT products are designed for both shop and field applications. They are portable, robust, and built to withstand demanding industrial environments while maintaining German engineering precision.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What pipe materials can DWT tools work with? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>DWT tools are designed for carbon steel, stainless steel, alloy steel, duplex, super duplex, chrome-moly, and other pipe materials commonly used in oil & gas, petrochemical, power generation, and industrial piping.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I choose the right pipe clamp? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>It depends on your application: Internal Centering Clamps for butt welds, External Centering Clamps for field joints, Chain Clamps for quick setups, Cage Clamps for heavy-duty work, and Reformer Clamps for out-of-round pipes. Use our AI recommendation tool above for personalized guidance!</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is weld purging and why is it important? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Weld purging displaces oxygen from inside a pipe with inert gas (usually argon) before and during welding. This prevents oxidation on the weld root, critical for stainless steel, duplex, and alloy piping to meet quality and code requirements.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you ship internationally? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes, we supply DWT products worldwide. Contact us for shipping details, pricing, and lead times to your location.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I download the full product catalog? <i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Absolutely! Click the "Download Catalog" button in the hero section or <a href="assets/dwt-catalog.pdf" download style="color:var(--accent);">click here</a> to download the complete DWT product catalog as a PDF.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<section class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <img src="assets/dwt-logo.png" alt="DWT Pipe Tools" style="height:44px; filter: brightness(0) invert(1); opacity: 0.9;">
+            <p>Authorized supplier of DWT GmbH (Germany) precision pipe welding tools and accessories. Serving oil & gas, petrochemical, power, and industrial piping sectors worldwide.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+                <a href="#products">Products</a>
+                <a href="#comparison">Compare</a>
+                <a href="#ai-section">AI Guide</a>
+                <a href="#quote">Get a Quote</a>
+                <a href="#faq">FAQ</a>
+                <a href="assets/dwt-catalog.pdf" download>Catalog PDF</a>
+            </div>
+        </div>
+        <div>
+            <h4>Categories</h4>
+            <div class="footer-links">
+                <a href="#" onclick="filterProducts('beveling')">Beveling & Cutting</a>
+                <a href="#" onclick="filterProducts('clamps')">Clamps & Alignment</a>
+                <a href="#" onclick="filterProducts('jacks')">Pipe Jacks</a>
+                <a href="#" onclick="filterProducts('rollers')">Pipe Rollers</a>
+                <a href="#" onclick="filterProducts('purging')">Purging Systems</a>
+                <a href="#" onclick="filterProducts('flange')">Flange Tools</a>
+            </div>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+919321127313">+91-93211-27313</a></div>
+            <div class="contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/919321127313" target="_blank">WhatsApp Chat</a></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@thegrandtools.com">info@thegrandtools.com</a></div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span style="color:rgba(255,255,255,0.45); font-size:0.85rem;">101 Bhoomi Homes, Kopar Khairane, Navi Mumbai 400709, India</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 DWT Pipe Tools — German engineering, global supply.</p>
+    </div>
+</section>
+
+<!-- FLOATING ACTIONS -->
+<div class="floating-actions">
+    <a href="#ai-section" class="fab fab-ai" title="AI Recommendation"><i class="fas fa-robot"></i></a>
+    <a href="tel:+919321127313" class="fab fab-call" title="Call Us"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/919321127313" target="_blank" class="fab fab-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img id="modalImg" src="" alt="">
+        <h3 id="modalName"></h3>
+        <p id="modalDesc"></p>
+        <p><strong>Sizes:</strong> <span id="modalSizes"></span></p>
+        <p><strong>Key Features:</strong> <span id="modalSpecs"></span></p>
+        <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="#quote" class="btn btn-primary" onclick="closeModal()" id="modalQuoteBtn" style="font-size:0.88rem; padding:12px 22px;"><i class="fas fa-file-invoice"></i> Get Quote</a>
+            <a href="https://wa.me/919321127313" target="_blank" class="btn btn-whatsapp" style="font-size:0.88rem; padding:12px 22px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- TAWK.TO PLACEHOLDER -->
+<!--
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true; s1.src='https://embed.tawk.to/YOUR_TAWK_ID/default';
+s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+-->
+
+<script>
+// ===== NAV SCROLL =====
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+function closeNav() { document.querySelector('.nav-links').classList.remove('active'); }
+
+// ===== PRODUCT FILTER =====
+function filterProducts(cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    const target = document.querySelector(`.filter-btn[data-cat="${cat}"]`);
+    if (target) target.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+}
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => filterProducts(btn.dataset.cat));
+});
+
+// ===== PRODUCT MODAL =====
+document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+        if (e.target.closest('.card-link')) return;
+        const d = this.dataset;
+        document.getElementById('modalImg').src = d.img;
+        document.getElementById('modalName').textContent = d.name;
+        document.getElementById('modalDesc').textContent = d.desc;
+        document.getElementById('modalSizes').textContent = d.sizes;
+        document.getElementById('modalSpecs').textContent = d.specs;
+        document.getElementById('modalQuoteBtn').onclick = function() {
+            closeModal(); prefillQuote(getCatLabel(card.dataset.cat), d.name);
+        };
+        document.getElementById('productModal').classList.add('active');
+    });
+});
+function closeModal() { document.getElementById('productModal').classList.remove('active'); }
+document.getElementById('productModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+function getCatLabel(cat) {
+    const map = { beveling:'Beveling & Cutting', clamps:'Clamps', jacks:'Pipe Jacks', rollers:'Pipe Rollers', fitup:'Pipe Fit-Up', leveling:'Leveling', purging:'Purging Systems', marking:'Marking Aids', flange:'Flange Tools' };
+    return map[cat] || cat;
+}
+
+// ===== QUOTE FORM =====
+const subcategories = {
+    'Beveling & Cutting': ['Pipe Beveling Machine','Pipe Milling Machine','CPC Cutting & Beveling Machine','DLW Cutting & Beveling Machine','Exact Pipe Saw'],
+    'Clamps': ['Centering Clamp INT','Centering Clamp EXT','Centering Clamp Elbow','Chain Clamp','Cage Clamp','Reformer Clamp'],
+    'Pipe Jacks': ['Pipe Jack – Folding','Pipe Jack – V-Head','Pipe Jack – Roller Head','Pipe Jack – Shorty'],
+    'Pipe Rollers': ['Pipe Roller – Conventional','Pipe Roller – Self-Aligning'],
+    'Pipe Fit-Up': ['Ratchet Leveler','Pipe Lifter','Column Clamp','Pipe Cradle'],
+    'Leveling': ['Spirit Level','Digital Protractor','Angle Finder'],
+    'Purging Systems': ['EcoInert Purging System','Purging Monitor'],
+    'Marking Aids': ['Centering Head','Marking Tape'],
+    'Flange Tools': ['Flange Leveler','Flange Spreader']
+};
+function updateSubcategory() {
+    const cat = document.getElementById('qCategory').value;
+    const sel = document.getElementById('qProduct');
+    sel.innerHTML = '<option value="">Select Product</option>';
+    if (subcategories[cat]) {
+        subcategories[cat].forEach(p => { const opt = document.createElement('option'); opt.value = p; opt.textContent = p; sel.appendChild(opt); });
+    }
+}
+function prefillQuote(cat, product) {
+    document.getElementById('qCategory').value = cat;
+    updateSubcategory();
+    setTimeout(() => { document.getElementById('qProduct').value = product; }, 50);
+    document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+}
+function getQuoteData() {
+    return { name: document.getElementById('qName').value, company: document.getElementById('qCompany').value, email: document.getElementById('qEmail').value, phone: document.getElementById('qPhone').value, category: document.getElementById('qCategory').value, product: document.getElementById('qProduct').value, size: document.getElementById('qSize').value, qty: document.getElementById('qQty').value, details: document.getElementById('qDetails').value };
+}
+function validateQuote(d) {
+    if (!d.name || !d.email || !d.category || !d.product) { alert('Please fill in all required fields (Name, Email, Category, Product).'); return false; }
+    return true;
+}
+function sendQuoteEmail() {
+    const d = getQuoteData(); if (!validateQuote(d)) return;
+    const subject = encodeURIComponent(`DWT Quote Request: ${d.product}`);
+    const body = encodeURIComponent(`QUOTE REQUEST — DWT Pipe Tools\n\nName: ${d.name}\nCompany: ${d.company}\nEmail: ${d.email}\nPhone: ${d.phone}\n\nCategory: ${d.category}\nProduct: ${d.product}\nPipe Size: ${d.size}\nQuantity: ${d.qty}\n\nAdditional Details:\n${d.details}`);
+    window.location.href = `mailto:info@thegrandtools.com?subject=${subject}&body=${body}`;
+}
+function sendQuoteWhatsApp() {
+    const d = getQuoteData(); if (!validateQuote(d)) return;
+    const msg = encodeURIComponent(`*DWT QUOTE REQUEST*\n\n👤 ${d.name}\n🏢 ${d.company}\n📧 ${d.email}\n📱 ${d.phone}\n\n🔧 Category: ${d.category}\n📦 Product: ${d.product}\n📏 Size: ${d.size}\n🔢 Qty: ${d.qty}\n\n📝 Details: ${d.details}`);
+    window.open(`https://wa.me/919321127313?text=${msg}`, '_blank');
+}
+
+// ===== AI RECOMMENDATION =====
+const aiRecommendations = {
+    bevel: { msg: "For pipe end preparation and weld prep, I recommend:", products: [
+        { name: "Pipe Beveling Machine", desc: "Portable, for various diameters", cat: "Beveling & Cutting" },
+        { name: "CPC Cutting & Beveling Machine", desc: "Combined cut + bevel in one step", cat: "Beveling & Cutting" },
+        { name: "DLW Cutting & Beveling Machine", desc: "For larger pipe diameters", cat: "Beveling & Cutting" }
+    ]},
+    align: { msg: "For aligning pipes before welding, I recommend:", products: [
+        { name: "Centering Clamp INT", desc: "Internal centering for butt welds", cat: "Clamps" },
+        { name: "Centering Clamp EXT", desc: "External centering for field joints", cat: "Clamps" },
+        { name: "Chain Clamp", desc: "Quick alignment for various sizes", cat: "Clamps" }
+    ]},
+    support: { msg: "For pipe support and elevation, I recommend:", products: [
+        { name: "Pipe Jack – Folding", desc: "Portable, foldable for transport", cat: "Pipe Jacks" },
+        { name: "Pipe Jack – V-Head", desc: "V-cradle prevents rolling", cat: "Pipe Jacks" },
+        { name: "Pipe Cradle", desc: "For storage and transport", cat: "Pipe Fit-Up" }
+    ]},
+    rotate: { msg: "For rotating pipes during welding, I recommend:", products: [
+        { name: "Pipe Roller – Conventional", desc: "Adjustable rollers for smooth rotation", cat: "Pipe Rollers" },
+        { name: "Pipe Roller – Self-Aligning", desc: "Auto-adjusting, prevents drift", cat: "Pipe Rollers" },
+        { name: "Pipe Jack – Roller Head", desc: "Jack with built-in rollers", cat: "Pipe Jacks" }
+    ]},
+    purge: { msg: "For weld root protection on stainless/alloy pipes:", products: [
+        { name: "EcoInert Purging System", desc: "Complete purging kit for clean roots", cat: "Purging Systems" },
+        { name: "Purging Monitor", desc: "Digital O2 monitoring for quality", cat: "Purging Systems" }
+    ]},
+    flange: { msg: "For flange work and maintenance:", products: [
+        { name: "Flange Leveler", desc: "Precision flange alignment", cat: "Flange Tools" },
+        { name: "Flange Spreader", desc: "Safe flange joint separation", cat: "Flange Tools" }
+    ]},
+    measure: { msg: "For angle measurement and leveling:", products: [
+        { name: "Spirit Level", desc: "Magnetic base, V-groove adapters", cat: "Leveling" },
+        { name: "Digital Protractor", desc: "LCD display, hold function", cat: "Leveling" },
+        { name: "Angle Finder", desc: "Measure and transfer angles", cat: "Leveling" }
+    ]},
+    cut: { msg: "For precision pipe cutting:", products: [
+        { name: "Exact Pipe Saw", desc: "Clean, burr-free cuts", cat: "Beveling & Cutting" },
+        { name: "CPC Cutting & Beveling Machine", desc: "Cut + bevel in one step", cat: "Beveling & Cutting" },
+        { name: "Marking Tape", desc: "Accurate cut-line marking", cat: "Marking Aids" }
+    ]}
+};
+function aiAnswer(key) {
+    const rec = aiRecommendations[key];
+    document.getElementById('aiOptions').style.display = 'none';
+    document.getElementById('aiChat').classList.add('active');
+    const msgs = document.getElementById('aiMessages');
+    let html = `<div class="ai-msg bot">🤖 ${rec.msg}</div>`;
+    rec.products.forEach(p => { html += `<div class="ai-msg bot"><strong>${p.name}</strong> — ${p.desc}<br><span class="product-suggestion" onclick="prefillQuote('${p.cat}','${p.name}')">📋 Get Quote</span></div>`; });
+    html += `<div class="ai-msg bot">Need something else? Type below or <a href="javascript:resetAI()" style="color:var(--accent);">start over</a>.</div>`;
+    msgs.innerHTML = html; msgs.scrollTop = msgs.scrollHeight;
+}
+function aiSend() {
+    const input = document.getElementById('aiInput');
+    const val = input.value.trim(); if (!val) return;
+    const msgs = document.getElementById('aiMessages');
+    msgs.innerHTML += `<div class="ai-msg user">${val}</div>`; input.value = '';
+    const lower = val.toLowerCase(); let key = null;
+    if (lower.match(/bevel|prep|weld prep|end prep/)) key = 'bevel';
+    else if (lower.match(/align|center|fit.?up|match/)) key = 'align';
+    else if (lower.match(/support|hold|elevat|jack|stand/)) key = 'support';
+    else if (lower.match(/rotat|roll|turn|spin/)) key = 'rotate';
+    else if (lower.match(/purg|inert|argon|oxidat|root|sugar/)) key = 'purge';
+    else if (lower.match(/flange|bolt|gasket|spread/)) key = 'flange';
+    else if (lower.match(/angle|level|measur|protract|spirit/)) key = 'measure';
+    else if (lower.match(/cut|saw|slic/)) key = 'cut';
+    setTimeout(() => {
+        if (key) { const rec = aiRecommendations[key]; let html = `<div class="ai-msg bot">🤖 ${rec.msg}</div>`; rec.products.forEach(p => { html += `<div class="ai-msg bot"><strong>${p.name}</strong> — ${p.desc}<br><span class="product-suggestion" onclick="prefillQuote('${p.cat}','${p.name}')">📋 Get Quote</span></div>`; }); msgs.innerHTML += html; }
+        else { msgs.innerHTML += `<div class="ai-msg bot">🤖 I'd recommend browsing our <a href="#products" style="color:var(--accent);">full product range</a> or contacting us via <a href="https://wa.me/919321127313" target="_blank" style="color:#25d366;">WhatsApp</a> for personalized help!</div>`; }
+        msgs.scrollTop = msgs.scrollHeight;
+    }, 500);
+}
+function resetAI() {
+    document.getElementById('aiOptions').style.display = '';
+    document.getElementById('aiChat').classList.remove('active');
+    document.getElementById('aiMessages').innerHTML = '';
+}
+
+// ===== FAQ =====
+function toggleFaq(el) { el.classList.toggle('active'); el.nextElementSibling.classList.toggle('active'); }
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
